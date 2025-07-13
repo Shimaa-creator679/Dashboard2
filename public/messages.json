@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "sender": "Google",
+    "subject": "Welcome to Gmail",
+    "content": "Thanks for signing up to Gmail. Let us help you get started.",
+    "date": "2025-07-07",
+    "isRead": false,
+    "status": "official"
+  },
+  {
+    "id": 2,
+    "sender": "Facebook",
+    "subject": "New login from Chrome",
+    "content": "We noticed a login from a new browser on your account.",
+    "date": "2025-07-06",
+    "isRead": true,
+    "status": "social"
+  },
+  {
+    "id": 3,
+    "sender": "LinkedIn",
+    "subject": "You have new connection requests",
+    "content": "People are waiting to connect with you on LinkedIn.",
+    "date": "2025-07-05",
+    "isRead": false,
+    "status": "social"
+  },
+  {
+    "id": 4,
+    "sender": "Spotify",
+    "subject": "Enjoy 3 months of Premium free",
+    "content": "Get Premium for 3 months. Only for new users.",
+    "date": "2025-07-04",
+    "isRead": false,
+    "status": "promotional"
+  }
+]

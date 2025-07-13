@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "date": "2025-07-08",
+    "from": "Mohamed Ali",
+    "amount": 250.00,
+    "detail": "Payment for freelance work"
+  },
+  {
+    "id": 2,
+    "date": "2025-07-07",
+    "from": "Sara Ahmed",
+    "amount": 75.50,
+    "detail": "Refund for order #1234"
+  },
+  {
+    "id": 3,
+    "date": "2025-07-06",
+    "from": "Online Store",
+    "amount": 320.00,
+    "detail": "Product purchase"
+  },
+  {
+    "id": 4,
+    "date": "2025-07-04",
+    "from": "Mostafa Youssef",
+    "amount": 1000.00,
+    "detail": "Monthly rent"
+  },
+  {
+    "id": 5,
+    "date": "2025-07-03",
+    "from": "Bank Transfer",
+    "amount": 150.00,
+    "detail": "Transfer from savings account"
+  }
+]

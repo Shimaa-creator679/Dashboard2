@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@import 'flowbite';
+body{
+    background-color: hsl(218, 100%, 98%);
+    
+    
+    }
+    
+
+
+
+
+.card:first-child{
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+td{
+    text-align: center;
+}
+td{
+    padding: 20px ;
+      margin: 10px;
+
+}
+th{
+    padding: 20px;
+      margin: 10px;
+}
+
+table {
+  border-spacing: 10px;
+  
+}
+ tbody tr:nth-child(odd) { background: rgb(208, 209, 211); 
+}
+ tbody tr:nth-child(even) { background: white;
+ }

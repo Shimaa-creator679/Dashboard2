@@ -1,0 +1,30 @@
+
+[{
+  "count": 12000,
+  "saved": 3000,
+  "name":"totalincome",
+  "bg":"blue",
+  "end": 12000
+},
+  {
+  "count": 7500,
+  "saved": 2000,
+  "name":"totalexpenses",
+  "bg":"lightblue",
+  "end": 12000
+  },
+  {"count": 4500,
+  "saved": 3000,
+  "name":"cashOnHand",
+  "bg":"violet",
+  "end": 4500
+},
+  {"count": 4500,
+  "saved": 3000,
+  "name":"NetProfitMargin",
+  "bg":"green",
+  "end": 4500
+}
+]
+
+
