@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchmessagesData } from '../../Redux/mailBox/mailSlice'
 import MessageData from './MessageData'
-import { Link, Outlet } from 'react-router'
+
 const Primary = () => {
 
     const dispatch=useDispatch()

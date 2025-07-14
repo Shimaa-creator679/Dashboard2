@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import { Toaster, toast } from 'react-hot-toast';
 const Expenses = () => {
 
 
@@ -27,6 +27,7 @@ const newarray=Expenses.filter((item)=>{
   return item.id!==id
 })
 setExpenses(newarray)
+toast.success('Item Delete successfully!')
 
   }
 
@@ -76,7 +77,14 @@ console.log("Response:", data);
     // 3️⃣ حدّث الـ state
     setExpenses(updatedItems);
 
+  toast.success('item was saved ', {
+  duration: 4000,
+  position: 'bottom-right',
+  className:"w-full"
+})
+
     setshowmodal(false)
+
       
 
     }catch(error){

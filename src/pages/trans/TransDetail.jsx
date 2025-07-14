@@ -10,31 +10,42 @@ const transDEtail = transData.find(item => item.id === transId);
 console.log(transDEtail)
 
   return (
-    <div className='md:col-span-5 col-span-12 h-full '>
-        <h1 className='text-gray-900'>transactionDetail</h1>
+    <div className="md:col-span-5">
+      <h1 className="text-blue-500 font-bold text-center uppercase">Transaction Detail</h1>
 
-        <div className="detail   rounded-xl shadow-xl bg-white mt-5 overflow-hidden ">
-            <div className="top space-y-5 h-1/4 bg-blue-600 py-5 px-10">
-                <h1 className='text-5xl text-gray-300'>{transDEtail?.amount}$</h1>
-                <p className='text-2xl text-gray-300'>ID:{transDEtail?.id}</p>
-            </div>
-
-            <div className="bottom px-10 pb-10 ">
-
-                <div className="from space-y-5 relative">
-                    <img src={fromTo} className='absolute w-20 h-20 top-1/2 left-0'></img>
-                    <h1 className='text-center text-blue-500'>from</h1>
-                    <p className='text-center '>{transDEtail?.from}</p>
-                    <p className='text-center'>sent:{transDEtail?.date}</p>
-                </div>
-                <div className="to space-y-5">
-                    <h1 className='text-center text-blue-500'>to</h1>
-                    <p className='text-center'>tonname</p>
-                    <p className='text-center'>recieved:date</p>
-                </div>
-            </div>
+      <div className="rounded-xl shadow-xl mt-5 overflow-hidden">
+        <div className="bg-blue-600 py-5 px-6 space-y-3">
+          <h1 className="text-lg text-gray-300">
+            <span className="text-white font-bold">Amount:</span> {transDEtail?.amount}$
+          </h1>
+          <p className="text-lg text-gray-300">
+            <span className="text-white font-bold">ID:</span> {transDEtail?.id}
+          </p>
         </div>
+
+        <div className="bg-white px-6 py-5 space-y-4">
+
+          <div className="space-y-1 bg-gray-200 rounded-xl px-3 py-2">
+            <h2 className="text-blue-500 font-bold text-sm">
+              From: <span className="text-black ml-2">{transDEtail?.from}</span>
+            </h2>
+            <p className="text-blue-500 font-bold text-sm">
+              Sent: <span className="text-black ml-2">{transDEtail?.date}</span>
+            </p>
+          </div>
+
+          <div className="space-y-1 bg-gray-200 rounded-xl px-3 py-2 text-sm">
+            <h2 className="text-blue-500 font-bold">
+              To: <span className="text-black ml-2">tonname</span>
+            </h2>
+            <p className="text-blue-500 font-bold text-sm">
+              Received: <span className="text-black ml-2">date</span>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+
   )
 }
 

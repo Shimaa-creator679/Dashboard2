@@ -1,17 +1,16 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import {  useSelector } from 'react-redux'
 
 import ReactApexChart from 'react-apexcharts';
 
 import CounterCard from './CounterCard';
 import Budgets from '../Budgets/Budgets';
-import { useLocation } from 'react-router';
+
 import Expenses from '../Expenses/Expenses';
 const Classic = () => {
 
 
-  const location =useLocation()
- console.log(location)
+
 
    
 

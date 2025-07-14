@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItem, fetchBudgetData, setBudgetFromLocal } from '../../Redux/Budget/BudgetSlice'
-import { useLocation } from 'react-router'
+import toast from 'react-hot-toast'
+
 
 const Budgets = () => {
 
   const dispatch=useDispatch()
-  const location =useLocation()
-  const classic=location.pathname==="/"
+
 
 
 
@@ -21,7 +21,17 @@ const Budgets = () => {
 
 const handleClick=(e)=>{
   e.preventDefault()
-  dispatch(addItem(state))
+  dispatch(addItem(state));
+
+  toast.success('item was saved ', {
+  duration: 4000,
+  position: 'bottom-right',
+  className:"w-full"
+})
+
+
+ 
+
 }
 
 
@@ -51,37 +61,43 @@ useEffect(() => {
 }, [BudgetData]);
 
   return (
-    <div className='relative' >
-        <h1 className='text-4xl font-bold text-blue-600 py-5'>My Budgets</h1>
+    <div className='relative ' >
+      <div className="flex justify-between items-center">
+          <h1 className='md:text-2xl font-bold text-orange-900 py-5'>My Budgets</h1>
+
+        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className=" text-center bg-gray-200 rounded-xl px-2 py-2 text-sm text-orange-900  " type="button">
+create Budget
+</button>
+
+      </div>
+      
 
         <div className="cards grid grid-cols-1 md:grid-cols-3 gap-5">
 
 
-            <div className={`create card ${classic?"hidden":"block"}`}>
+            
 
-<button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-+ <p>create Budget</p>
-</button>
 
-            </div>
+
+         
 
 {loading  ? <div>loading</div>:
 BudgetData.map((item,index)=>{
   return <div className="card bg-white  p-4 rounded-lg shadow-xl py-10 px-10 space-y-10 ">
 <div className="top flex justify-between items-center">
-    <span>icon</span>
-    <span className='text-black font-bold'>{item.category}</span>
-    <span className='font-bold text-violet-500 text-3xl'>{item.limit}$</span>
+  
+    <span className='text-slate-400 font-bold'>{item.category}</span>
+    <span className='font-bold text-orange-900 md:text-3xl'>{item.limit}$</span>
 </div>
 <div className="bottom flex justify-between items-center">
-    <p className='text-gray-400'>{item.spent}</p>
-    <p className='text-gray-400'>Renaining:{item.limit-item.spent}</p>
+    <p className='text-slate-400'>spent:{item.spent}</p>
+    <p className='text-slate-400'>Renaining:{item.limit-item.spent}</p>
 </div>
 
 <div className="progresbar">
 
-<div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-  <div className="bg-violet-600 h-2.5 rounded-full w-10" ></div>
+<div className="w-full bg-slate-200 rounded-full h-2.5 dark:bg-gray-700">
+  <div className="bg-orange-900 h-2.5 rounded-full w-10" ></div>
 </div>
 
 </div>
@@ -107,7 +123,7 @@ BudgetData.map((item,index)=>{
 
                 <button type="button" className="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
                     <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        <path stroke="currentColor" stroke-linecap="round" strokeLinejoin="round"strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                     </svg>
                     <span className="sr-only">Close modal</span>
                 </button>
@@ -118,7 +134,7 @@ BudgetData.map((item,index)=>{
         
 
             <div className="p-4 md:p-5">
-                <form className="space-y-4" action="#" onSubmit={(handleClick)}>
+                <form className="space-y-4" action="#" onSubmit={handleClick}>
                     <div>
                         <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Budget Name</label>
                         <input onChange={(e)=>{setstate({...state,category:e.target.value})}} type="text" name="Budget" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="eg:الصحه" required />

@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom"
 import Layout from "./components/Layout"
 import Classic from "./pages/Classic/Classic"
 import Minimal from "./pages/minimal/Minimal"
-
+import { Toaster, toast } from 'react-hot-toast';
 
 import { useEffect } from "react"
 import { fetchClassicData } from './Redux/Classic/classicSlice'
@@ -29,8 +29,9 @@ useEffect(()=>{
 
 
   return (
-
-  <Routes>
+    <>
+    <Toaster position="bottom-right" />
+    <Routes>
     <Route path="/" element={<Layout />} >
     <Route index element={<Classic/>}/>
     <Route path="minimal" element={<Minimal />} />
@@ -51,6 +52,9 @@ useEffect(()=>{
     </Route>
 
   </Routes>
+    </>
+ 
+  
 
   )
 }

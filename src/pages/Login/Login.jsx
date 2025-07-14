@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FacebookAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../../firebase"; // Adjust the path as necessary
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 
 

@@ -37,7 +37,7 @@ const Faq = () => {
     <div className='  '>
         <div className="   rounded-xl overflow-hidden  shadow-lg   w-[90%] mx-auto ">
 
-        <div className="grid grid-cols-12  bg-cover   bg-red-600 "  >
+        <div className="grid grid-cols-12  bg-cover    "  >
 
             <div className="md:col-span-7 col-span-12 w-full h-[300px] md:h-full bg-center   bg-cover "  style={{ backgroundImage: `url(${faq})` }} >
 
@@ -49,7 +49,7 @@ const Faq = () => {
 
 
 
-            <div className="col-span-12 h-full md:col-span-5 bg-white px-5 pt-10 ">
+            <div className="col-span-12 h-full md:col-span-5 bg-white px-5 py-10 ">
 <h1 className='text-xl font-bold text-[#ec5648]'>freqently asked question</h1>
 <div className="question">
     <ul className='pt-10'>

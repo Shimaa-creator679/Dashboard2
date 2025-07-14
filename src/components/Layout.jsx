@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Outlet } from "react-router";
+import { Link, Outlet } from "react-router-dom";
 import image from "../assets/images/image.png";
 import home from "../assets/images/home.png";
 import { FaChevronDown } from "react-icons/fa6";
@@ -78,10 +78,17 @@ const Layout = () => {
   return (
     <div >
       <div
-        className={`side min-h-screen  w-64 absolute top-0 left-0 z-[10000000] bg-[#f7faff]  lg:block pt-10 px-5  ${
+        className={`side   w-64  fixed top-0 left-0 border-r border-gray-400 h-screen z-[10000000] bg-[#f7faff]  lg:block pt-10 px-5  ${
           menuOpen ? "block" : "hidden"
         } transition-width duration-300 ease-in-out`}>
+
+<div className="relative -top-12">
+   <button onClick={()=>{setMenuOpen(false)}} className="absolute lg:hidden right-0 top-100 font-bold text-3xl text-[#5898cc]">X</button>
+</div>
+          
+
         <div className="logo  ">
+        
           <a className="flex gap-3 items-center justify-center bg-white p-10 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out">
             <img src={image} className="w-10" />
             <h1 className="bg-transparent font-bold text-[#5882ac] text-3xl">
@@ -214,7 +221,7 @@ const Layout = () => {
             </div>
           </header>
 
-          <div className="content m-[30px] ">
+          <div className="content md:m-[30px] pt-5 ">
 
             <Outlet />
           </div>
