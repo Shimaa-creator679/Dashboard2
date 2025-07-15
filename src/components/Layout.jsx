@@ -77,8 +77,10 @@ const Layout = () => {
   const [openitem, setopenitem] = useState(null);
   return (
     <div >
+
+      {/* side */}
       <div
-        className={`side   w-64  fixed top-0 left-0 border-r border-gray-400 h-screen z-[10000000] bg-[#f7faff]  lg:block pt-10 px-5  ${
+        className={`side   w-64  fixed top-0 left-0 border-r h-screen overflow-y-auto border-gray-400  z-[10000000] bg-[#f7faff]  lg:block pt-10 px-5  ${
           menuOpen ? "block" : "hidden"
         } transition-width duration-300 ease-in-out`}>
 
@@ -96,6 +98,7 @@ const Layout = () => {
             </h1>
           </a>
         </div>
+
 
         <div className="links pt-5">
           {sidelinks.map((link) => {
@@ -159,10 +162,22 @@ const Layout = () => {
         </div>
       </div>
 
-      <div className="main  relative min-h-screen lg:pl-64 overflow-x-hidden w-[100%] pt-10 ">
-        <div className="  w-full ">
 
-          <header className="flex items-center justify-between px-6 py-3 md:py-4 shadow-sm max-w-5xl rounded-full mx-auto w-full bg-white">
+
+
+
+
+
+
+
+
+
+{/* main */}
+      <div className="main  relative min-h-screen lg:pl-64 overflow-x-hidden w-[100%] py-10 ">
+        <div className="   w-full ">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <header className="flex items-center justify-between px-6 py-3 md:py-4 shadow-sm  rounded-full w-full bg-white">
+          
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="lg:hidden text-gray-600">
@@ -220,11 +235,15 @@ const Layout = () => {
               {/* Open Button */}
             </div>
           </header>
+          </div>
 
-          <div className="content md:m-[30px] pt-5 ">
+         
+
+     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <Outlet />
           </div>
+       
         </div>
       </div>
     </div>

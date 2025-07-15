@@ -29,7 +29,7 @@ dispatch(fetchTransData())
     console.log(transFilteredByDate)
 
   return (
-    <div className=''>
+    <div className='py-10'>
         <div className="nav md:flex-row items-center justify-between flex-col  flex gap-5">
 
             <h2 className="text-xl font-bold text-blue-500 ">transaction</h2>

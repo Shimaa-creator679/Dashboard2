@@ -3,7 +3,7 @@ import { Link, Outlet } from 'react-router-dom'
 
 const MailBox = () => {
   return (
-    <div>
+    <div className='pt-10'>
 
 
    <div className='grid grid-cols-12 gap-5 max-w-full'>

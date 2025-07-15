@@ -31,6 +31,26 @@ const Classic = () => {
                 height: 350,
                 type: 'line',
               },
+               responsive: [
+      {
+        breakpoint: 768, // لو أقل من 768px
+        options: {
+          chart: {
+            height: 300,
+          },
+
+          legend: {
+            position: 'bottom'
+          },
+
+        },
+         plotOptions: {
+        bar: {
+          columnWidth: '60%', // أرفع الأعمدة أكتر في الموبايل
+        }
+      },
+      }
+    ],
               stroke: {
                 width: [0, 4]
               },
@@ -89,8 +109,8 @@ const Classic = () => {
 <div className='bg-[#f9fbff] mt-10 py-10 rounded-xl'>
 
   <h2 className='text-2xl font-semibold py-5 pl-5 text-gray-300'>AP and AR Balance</h2>
-            <div id="chart" className='w-3/4 mx-auto'>
-                <ReactApexChart options={state.options} series={state.series} type="line" height={350} />
+            <div id="chart" className='w-full px-4'>
+                <ReactApexChart options={state.options} series={state.series} type="line" height={350} width="100%" />
               </div>
             <div id="html-dist"></div>
           </div>

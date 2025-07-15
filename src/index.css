@@ -13,7 +13,15 @@ body{
     
 
 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: rgb(197, 162, 174); /* Tailwind: slate-300 */
+  border-radius: 10px;
+}
 
 
 td{

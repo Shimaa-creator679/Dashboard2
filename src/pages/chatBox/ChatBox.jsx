@@ -19,7 +19,7 @@ console.log(chats)
 
 
   return (
-    <div>
+    <div className='pt-10'>
         <div className="top   ">
             <h1 className='text-sky-950 md:text-2xl font-bold'>content List</h1>
 
