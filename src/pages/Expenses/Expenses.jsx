@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Toaster, toast } from 'react-hot-toast';
+import Swal from 'sweetalert2'
 const Expenses = () => {
+
 
 
 
@@ -27,9 +29,47 @@ const newarray=Expenses.filter((item)=>{
   return item.id!==id
 })
 setExpenses(newarray)
-toast.success('Item Delete successfully!')
+
+const swalWithBootstrapButtons = Swal.mixin({
+   customClass: {
+     confirmButton:  "bg-green-600 ml-5 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2",
+     cancelButton: "bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+   },
+   buttonsStyling: false
+ });
+
+ swalWithBootstrapButtons.fire({
+   title: "Are you sure?",
+   text: "You won't be able to revert this!",
+  icon: "warning",
+   showCancelButton: true,
+  confirmButtonText: "Yes, delete it!",
+  cancelButtonText: "No, cancel!",
+  reverseButtons: true
+ }).then((result) => {
+  if (result.isConfirmed) {
+   swalWithBootstrapButtons.fire({
+     title: "Deleted!",
+     text: "Your file has been deleted.",
+     icon: "success"
+    });
+  } else if (
+    /* Read more about handling dismissals below */
+   result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire({
+      title: "Cancelled",
+      text: "Your imaginary file is safe :)",
+      icon: "error"
+    });
+  }
+ });
 
   }
+
+
+
+
 
   useEffect(()=>{
     localStorage.setItem("expenseResponse",JSON.stringify(Expenses))
